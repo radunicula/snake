@@ -12,6 +12,12 @@
     background-color: darkgrey;
 }
 
+#game_over{
+    margin-top: 200px;
+    margin-left: 130px;
+    color: #ff0000;
+}
+
 #game div{
     border-radius: 30%;
     width: 10px;

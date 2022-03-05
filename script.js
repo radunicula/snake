@@ -10,6 +10,9 @@ let snake = [];
 let snake_head;
 let score = 0;
 let timer = setInterval(game_loop, interval);
+const game_over = document.createElement("h2");
+game_over.setAttribute("id", "game_over");
+game_over.innerText = "Game Over";
 
 function create_snake(left, top) {
     for (let i = 0; i < 4; ++i) {
@@ -60,7 +63,7 @@ function on_reset() {
     create_snake(200, 50);
     create_food();
     timer = setInterval(game_loop, interval);
-    document.getElementById('score').textContent = `Score ${score}`
+    document.getElementById('score').textContent = `Score ${score}`;
 }
 
 function game_loop() {
@@ -71,7 +74,7 @@ function game_loop() {
     if (isGameOver(x, y)) {
         clearInterval(timer);
         btnReset.disabled = false;
-        alert('Game Over!');
+        game.appendChild(game_over);
         return;
     }
 
@@ -83,7 +86,6 @@ function game_loop() {
         ++score;
         document.getElementById("score").textContent = `Score: ${score}`;
     }
-
     snake_head.old_y = y;
     snake_head.old_x = x;
     switch (direction) {
@@ -115,8 +117,8 @@ function game_loop() {
 
 function create_food() {
     let div_food = document.createElement('div');
-    let x = 10 * Math.ceil(Math.random() * (w / 10)-1);
-    let y = 10 * Math.ceil(Math.random() * (h / 10)-1);
+    let x = 10 * Math.ceil(Math.random() * (w / 10) - 1);
+    let y = 10 * Math.ceil(Math.random() * (h / 10) - 1);
     div_food.style.left = `${x}px`;
     div_food.style.top = `${y}px`;
     food = div_food;
