@@ -1,0 +1,36 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+#game{
+    margin: 20px;
+    width: 400px;
+    height: 600px;
+    border: 12px solid black;
+    position: relative;
+    background-color: darkgrey;
+}
+
+#game div{
+    border-radius: 30%;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    display: inline-block;
+    background-color: brown;
+}
+
+#btnReset{
+    width: 100px;
+    padding: 0.5rem 1rem;
+    margin-left: 50px;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  padding: 30px;
+}
